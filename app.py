@@ -13,6 +13,8 @@ os.makedirs(FILE_DIRECTORY, exist_ok=True)
 def get_files():
     files = []
     for filename in os.listdir(FILE_DIRECTORY):
+        if filename == ".gitkeep":  # Ignore .gitkeep
+            continue
         filepath = os.path.join(FILE_DIRECTORY, filename)
         if os.path.isfile(filepath):
             file_info = {
